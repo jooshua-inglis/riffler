@@ -5,3 +5,6 @@ icons/*
 .vscode
 __pycache__
 riffler_env
+build
+dist
+Riffler.egg-info

@@ -15,13 +15,12 @@ import shutil
 
 
 from pdf2image import convert_from_path
-
 logging.basicConfig(level=logging.DEBUG,
                     format=' %(asctime)s = %(levelname)s  %(message)s')
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 ROOT_DIR = dirname(realpath(__file__))
-ROOT_DIR = realpath(join(ROOT_DIR, os.path.pardir))
+
 
 ICON_DIR = join(ROOT_DIR, "resources", "icons")
 
@@ -159,7 +158,7 @@ class Window(Frame):
 
         self.master.title("Riffler")
         icon_dir = join(ROOT_DIR, "resources", "icon.gif")
-        root.tk.call('wm', 'iconphoto', root._w, PhotoImage(file=icon_dir))
+        self.master.tk.call('wm', 'iconphoto', self.master._w, PhotoImage(file=icon_dir))
 
         # Creating the Frames that the icons go in and the scrollbar, the grid is in a frame, which is in a canvas.
         # This is the only way for it to work.
@@ -274,8 +273,7 @@ def clean():
         for d in dirs:
             shutil.rmtree(join(root_dir, d))
 
-
-if __name__ == "__main__":
+def main():
     logging.disable(logging.CRITICAL)
     root = Tk()
     root.geometry("800x500")
@@ -283,3 +281,7 @@ if __name__ == "__main__":
     app = Window(main, root)
     mainloop()
     clean()
+
+
+if __name__ == "__main__":
+    main()
