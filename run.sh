@@ -8,4 +8,4 @@ if [ ! -f $PYTHONPATH ]; then
     source "$relPath/riffler_env/bin/activate"
     pip install -r "$relPath/requirements.txt"
 fi 
-$PYTHONPATH "$relPath/src/main.py"
+$PYTHONPATH "$relPath/riffler.py"
