@@ -119,8 +119,8 @@ class Main:
         go = True
         i = 0
         while go:
-            if not file_name + '-%s' % i in self.files.keys():
-                file_name = file_name + '-%s' % i
+            if not file_name + f'-{i}' in self.files.keys():
+                file_name = file_name + f'-{i}'
                 go = False
             i += 1
         image_location = join(ICON_DIR, file_name)
@@ -140,7 +140,7 @@ class Main:
         )
 
         self.files[file_name] = PdfFile(pdf_file_location, file_name)
-        logging.debug('importing %s' % path)
+        logging.debug(f'importing {path}')
         for i, image in enumerate(self.files[file_name].get_images()):
             self.pages.append(
                 Page(page_number=i,
