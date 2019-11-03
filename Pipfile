@@ -11,10 +11,10 @@ wheel = "*"
 autopep8 = "*"
 
 [packages]
-pdf2image = "==1.6.0"
-tk = "==0.1.0"
-Pillow = "==6.1.0"
-PyPDF2 = "==1.26.0"
+pdf2image = "*"
+tk = "*"
+Pillow = "*"
+PyPDF2 = "*"
 
 
 [requires]
